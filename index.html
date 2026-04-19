@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Juegos</title>
+</head>
+<body>
+    
+    <header><!--Encabezado-->
+
+        <h1>Mis juegos favoritos</h1>
+
+        <nav> <!-- Seccion de navegacion -->
+
+            <ul><!--Hago una lista desordenada-->
+                <li><a href="#Mis Juegos"> 🕹️ Mis juegos</a></li>
+                <li><a href=""> 🏆 Ranking de juegos mas jugados</a></li>
+                <li><a href="">📬 Contacto</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main id="Mis Juegos"> <!-- Tema principal -->
+
+        <h2>Mis juegos</h2>
+
+        <section > <!--Secciones que agrupan eelementos relacionados -->
+
+            <h3>THE LAST OF US</h3>
+
+            <img class="imagen" src="img/The last of us.jpg" alt="Imagen no disponible">
+
+            <p>Descripcion del juego</p>
+            <p>Genero: </p>
+
+        </section>
+
+        <section >
+
+            <h3>GTA V</h3>
+
+            <img class="imagen" src="img/Gta.jpg" alt="Imagen no disponible">
+
+            <p>Descripcion del juego</p>
+            <p>Genero: </p>
+
+        </section>
+
+        <section >
+
+            <h3>Rocket League</h3>
+
+            <img class="imagen" src="img/Rocket_league.jpg" alt="Imagen no disponible">
+
+            <p>Descripcion del juego</p>
+            <p>Genero: </p>
+
+        </section>
+
+        <section >
+
+            <h3>Call of duty</h3>
+
+            <img class="imagen" src="img/Cod.jpg" alt="Imagen no disponible">
+
+            <p>Descripcion del juego</p>
+            <p>Genero: </p>
+
+        </section>
+
+        <!--Article: Contenido independiente, puede ser una noticia que este relacionado con el tema principal-->
+        <article>
+
+            <h2>Ranking de juegos mas jugados</h2>
+
+        </article>
+
+        <!-- Formulario de contacto: Con el elemento form agrupamos los campos como mail, nombre etc para enviarlo a un servidor -->
+        
+        <form class="formulario-contacto" action="https://formspree.io/f/xeevkwgq" method="post" target="_blank">
+
+            <h2>Dejame tu mensaje</h2>
+
+            <label>Nombre:</label>
+            <input type="text" name="nombre">
+
+            <label>Mail: </label>
+            <input type="email" placeholder="Ingresa tu mail.." name="email">
+
+            <label>Mensaje:  </label>
+            <textarea name="message"placeholder="Si queres recomendarme un juego, escribime"></textarea> <!--Para ingresar texto en multiples linea-->
+
+            <button class="boton-enviar boton-formulario" type="submit">Enviar</button> <button class="boton-resetear boton-formulario" type="reset">Resetear</button>
+
+
+        </form>
+
+    </main>
+
+    <footer>
+
+        <h2>Informacion del sitio </h2>
+
+        <ul>
+            <li><p><strong>Nombre:</strong> Agustin Manuel Landeira  </p></li>
+            <li><p><strong>Curso:</strong> Curso de Frontend - JS</p></li>
+            <li><p><strong>Año:</strong> 2026</p></li>
+            <li><p><strong>Descripcion:</strong> Pagina sobre mis videojuegos favoritos</p></li>
+        </ul>
+
+    </footer>
+
+</body>
+</html>
