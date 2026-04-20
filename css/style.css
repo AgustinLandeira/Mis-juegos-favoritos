@@ -2,64 +2,78 @@
     margin: 0;
 }
 
-header{
+.Encabezado{
     background-color: gray;
 }
 
-header h1{
+.Encabezado__titulo{
     text-align: center;
 }
 
-a{
+.Encabezado__enlace{
     text-decoration: none;
+    color: white;
+
 }
 
-ul{
+.Encabezado__lista{
     list-style: none;
     
 }
 
-main{
+.Mis-juegos{
     margin: 10px;
+    font-style: italic/*Estilo del textp*/
 }
 
-section{
+.Mis-juegos__seccion{
     margin-bottom: 5px;
 }
 
-.imagen{
+.Mis-juegos__imagen{
 
     height: 350px;
     width: 350px;
     border: 7px solid gray;
 }
 
-.formulario-contacto{
+.Mis-juegos__parrafo{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Formulario{
 
     border: 10px solid gray;
     margin-bottom: 10px;
 }
 
-p{
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.boton-formulario{
+.Formulario__boton{
     width: 100px;
     font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    font-weight: bold; /*Grosor del textp*/
     
 }
 
-.boton-enviar{
+.Formulario__boton--enviar{
     background-color: green;
     /* border: 4px solid green; */
 }
 
-.boton-resetear{
+.Formulario__boton--resetear{
     background-color: red;
 }
 
-footer{
+.Pie-pagina{
     background-color: gray;
     text-align: center;
+}
+
+.Pie-pagina__listado{
+    list-style: none;
+}
+
+.Pie-pagina__parrafo{
+    font-family: 'Times New Roman', Times, serif;
+    
 }
