@@ -23,27 +23,27 @@
     
 }
 
-.Mis-juegos__h3{
+.juegos-recomendados__h3{
     margin-bottom: 5px;
 }
 
-.Mis-juegos__subtitulo{
+.juegos-recomendados__subtitulo{
     margin: 10px;
 }
 
-.Mis-juegos__seccion{
+.juegos-recomendados__seccion{
     margin: 10px;
     margin-bottom: 5px;
 }
 
-.Mis-juegos__imagen{
+.juegos-recomendados__imagen{
 
     height: 350px;
     width: 350px;
     border: 7px solid yellow;
 }
 
-.Mis-juegos__parrafo{
+.juegos-recomendados__parrafo{
     font-family: 'Times New Roman', Times, serif;
 }
 
