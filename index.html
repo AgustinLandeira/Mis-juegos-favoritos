@@ -15,7 +15,7 @@
         <nav class="Encabezado__navegacion"> <!-- Seccion de navegacion -->
 
             <ul class="Encabezado__lista"><!--Hago una lista desordenada-->
-                <li class="Encabezado__item"><a class="Encabezado__enlace" href="#Mis-juegos"> 🕹️ Mis juegos</a></li>
+                <li class="Encabezado__item"><a class="Encabezado__enlace" href="#Mis-juegos-favoritos"> 🕹️ Mis juegos</a></li>
                 <li class="Encabezado__item"><a class="Encabezado__enlace"  href="#Ranking"> 🏆 Ranking de juegos mas jugados</a></li>
                 <li class="Encabezado__item" ><a class="Encabezado__enlace" href="#contacto">📬 Contacto</a></li>
             </ul>
@@ -24,9 +24,9 @@
 
     </header>
 
-    <main id="Mis-juegos" class="Mis-juegos"> <!-- Tema principal -->
+    <main id="Mis-juegos-favoritos" class="Mis-juegos"> <!-- Tema principal -->
 
-        <h2 class="Mis-juegos__subtitulo">Mis juegos</h2>
+        <h2 class="Mis-juegos__subtitulo">Mis juegos:</h2>
 
         <section class="Mis-juegos__seccion" > <!--Secciones que agrupan eelementos relacionados -->
 
@@ -78,12 +78,59 @@
 
         </section>
 
-        <!--Article: Contenido independiente, puede ser una noticia que este relacionado con el tema principal-->
-        <article class="Mis-juegos__articulo" id="Ranking">
+        <!-- BLOQUE: Ranking -->
 
-            <h2 class="Mis-juegos__h2" >Ranking de juegos mas jugados</h2>
+        <section class="Ranking" id="Ranking">
+            <h2>Ranking de juegos mas jugados: </h2>
 
-        </article>
+            <div class="Ranking__caja">
+
+                <!--Article: Contenido independiente, puede ser una noticia que este relacionado con el tema principal-->
+                <article class="Ranking__articulo">
+
+                    <h3 class="Ranking__nombre">1. Red Dead Redemption 2</h3>
+
+                    <img class="Ranking__imagen" src="img/ranking_juegos/red dead.jpg" alt="Red Dead Redemption">
+
+                </article>
+
+                <article class="Ranking__articulo">
+
+                    <h3 class="Ranking__nombre">2. The last of us Parte ||</h3>
+
+                    <img class="Ranking__imagen" src="img/ranking_juegos/the last of us.jpeg" alt="The last of us">
+
+                </article>
+
+                <article class="Ranking__articulo">
+
+                    <h3 class="Ranking__nombre">2. Super Mario Bross Galaxy 2</h3>
+
+                    <img class="Ranking__imagen" src="img/ranking_juegos/Super mario.jpg" alt="Super Mario Bross">
+
+                </article>
+
+                <article class="Ranking__articulo">
+
+                    <h3 class="Ranking__nombre">3. Donkey Kong Country</h3>
+
+                    <img class="Ranking__imagen" src="img/ranking_juegos/Donkey kong.jpg" alt="Donkey Kong">
+
+                </article>
+
+                <article class="Ranking__articulo">
+
+                    <h3 class="Ranking__nombre">4. GTA V</h3>
+
+                    <img class="Ranking__imagen" src="img/ranking_juegos/GTA.png" alt="Gta V">
+
+                </article>
+
+            </div>
+
+            <p class="Ranking__parrafo">Para mas informacion sobre juegos mas jugados en consolas, haz click aqui: <a class="Ranking__enlace" target="_blank" href="https://www.hobbyconsolas.com/videojuegos/top-juegos">ir</a> </p>
+
+        </section>
 
         <!-- Formulario de contacto: Con el elemento form agrupamos los campos como mail, nombre etc para enviarlo a un servidor -->
         

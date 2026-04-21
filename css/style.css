@@ -1,9 +1,11 @@
 *{
     margin: 0;
+    font-style: italic
 }
 
 .Encabezado{
-    background-color: gray;
+    background-color:blue;
+    color: yellow;
 }
 
 .Encabezado__titulo{
@@ -12,7 +14,7 @@
 
 .Encabezado__enlace{
     text-decoration: none;
-    color: white;
+    color: yellow;
 
 }
 
@@ -21,12 +23,16 @@
     
 }
 
-.Mis-juegos{
+.Mis-juegos__h3{
+    margin-bottom: 5px;
+}
+
+.Mis-juegos__subtitulo{
     margin: 10px;
-    font-style: italic/*Estilo del textp*/
 }
 
 .Mis-juegos__seccion{
+    margin: 10px;
     margin-bottom: 5px;
 }
 
@@ -34,7 +40,7 @@
 
     height: 350px;
     width: 350px;
-    border: 7px solid gray;
+    border: 7px solid yellow;
 }
 
 .Mis-juegos__parrafo{
@@ -76,4 +82,34 @@
 .Pie-pagina__parrafo{
     font-family: 'Times New Roman', Times, serif;
     
+}
+
+
+.Ranking{
+    background-color:blue;
+    color: yellow;
+    margin: 0px;
+    margin-bottom: 10px;
+    
+}
+
+
+.Ranking__caja{
+
+    display: grid;
+    grid-template-columns: repeat(3,auto);/* 3 columnas, las columnas miden lo que necesite su contenido */
+    justify-content: center; /*centra toda la grilla horizontalmente*/
+    gap: 10px; /*espacio entre las fotos*/
+    
+
+}
+
+.Ranking__imagen{
+    height: 250px;
+    width: 350px;
+    border: 3px solid yellow;
+}
+
+.Ranking__enlace{
+    color: red;
 }
