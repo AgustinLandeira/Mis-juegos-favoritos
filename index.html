@@ -198,17 +198,18 @@
             <h2 class="Formulario__h2">¿ Tenes dudas ? Contactame !!!</h2>
 
             <label class="Formulario__label">Nombre:</label>
-            <input class="Formulario__entrada" type="text" name="nombre">
+            <input class="Formulario__entrada" type="text" name="nombre" placeholder="Ingrese su nombre">
 
             <label class="Formulario__label">Mail: </label>
             <input class="Formulario__entrada" type="email" placeholder="Ingresa tu mail.." name="email">
 
             <label class="Formulario__label">Mensaje:  </label>
-            <textarea class="Formulario__entrada" name="message"placeholder="Escribe aqui tu consulta"></textarea> <!--Para ingresar texto en multiples linea-->
+            <textarea class="Formulario__entrada Formulario__entrada--text" name="message"placeholder="Escribe aqui tu consulta"></textarea> <!--Para ingresar texto en multiples linea-->
 
-            <button class="Formulario__boton Formulario__boton--enviar"  type="submit">Enviar</button> 
-            <button class="Formulario__boton Formulario__boton--resetear" type="reset">Resetear</button>
-
+            <div class="Formulario__caja-botones">
+                <button class="Formulario__boton Formulario__boton--enviar"  type="submit">Enviar</button> 
+                <button class="Formulario__boton Formulario__boton--resetear" type="reset">Resetear</button>
+            </div>
 
         </form>
 
