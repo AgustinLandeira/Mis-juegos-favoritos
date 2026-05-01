@@ -2,6 +2,55 @@
     margin: 0rem;
     font-family:"Roboto Condensed", sans-serif ;
     padding: 0px;
+    color: white;
+}
+
+.Encabezado,.Pie-pagina,.juegos-recomendados__promo,.juegos-recomendados__articulo,.Reseñas-seccion__card,.Formulario,.Ranking{
+
+    background: linear-gradient(135deg,#1a1a1a, #333);
+
+}
+
+.Encabezado__titulo,.Reseñas-seccion__titulo, .Pie-pagina__subtitulo,.Formulario__h2{
+    text-shadow: 0px 0px 15px red;
+}
+
+.Encabezado__titulo,.Pie-pagina,.juegos-recomendados__promo,.Formulario__h2,.juegos-recomendados{
+    text-align: center;
+}
+
+.Pie-pagina__subtitulo,.Reseñas-seccion__titulo,.Encabezado__titulo {
+    font-size: 3rem;
+}
+
+.juegos-recomendados__articulo,.juegos-recomendados__promo,.Reseñas-seccion__foto-perfil,.Reseñas-seccion__card,.Ranking__imagen,.Ranking__enlace,.Ranking,.Formulario,.juegos-recomendados__promo__imagen{
+    border: 0.20rem solid red;
+}
+
+.Encabezado__enlace:hover,.juegos-recomendados__boton:hover,.Ranking__enlace:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
+.Formulario{
+    color:red;
+    box-shadow: 0px 0px 15px red; 
+}
+
+.juegos-recomendados__boton:hover,.Reseñas-seccion__card:hover,.Formulario__boton--enviar:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover{
+    transform: scale(1.1);
+}
+
+.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton{
+    background-color: black;
+}
+
+.juegos-recomendados__promo-titulo,.juegos-recomendados__promo-titulo,.Ranking__titulo,.Formulario__h2{
+    font-size: 2rem;
+}
+
+.Pie-pagina__parrafo,.Pie-pagina__subtitulo,.Reseñas-seccion__titulo,.Formulario__h2{
+    margin-bottom: 1rem;
+}
+
+.Pie-pagina__parrafo,.juegos-recomendados__parrafo{
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .Encabezado{
@@ -11,26 +60,12 @@
     padding-bottom: 0.8rem;
 }
 
-.Encabezado,.Encabezado__enlace,.juegos-recomendados,.Ranking,.Pie-pagina{
-    color: white;
-}
-
-.Encabezado,.Pie-pagina{
-
-    background: linear-gradient(135deg,#1a1a1a, #333);
-
-}
 
 .Encabezado__titulo{
     padding-top:0.31rem;         /*5px;*/
     padding: 2px;
-    text-shadow: 0px 0px 15px red;
-    font-size: 3rem;
 }
 
-.Encabezado__titulo,.Pie-pagina{
-    text-align: center;
-}
 
 .Encabezado__lista{
     list-style: none;
@@ -43,22 +78,16 @@
 .Encabezado__enlace{
     text-decoration: none;
     margin-right: 0.62rem;
-    
 
 }
 
 .Encabezado__enlace:hover{
-    background-color: black;
-    color: red;
     border-radius: 0.31rem;   
-    box-shadow: 0px 0px 15px red;      /*5px;*/
 }
 
 
 .juegos-recomendados{
     padding-top:0.9rem ;
-    background-color: black;
-    text-align:center;
     padding-bottom: 10px;
 }
 
@@ -81,54 +110,38 @@
 
 .juegos-recomendados__articulo{
     margin: 0.9rem;      /* centra horizontalmente 20px */
-    background: linear-gradient(135deg,#1a1a1a, #333);
     max-width: 31.5rem;       /* limita el ancho 500px */
     padding: 0.6rem;          /* espacio interno */
     border-radius:0.6rem;
-    border: 0.20rem solid red;
+    
 }
 
 .juegos-recomendados__imagen{
-
     height: 21.9rem;
     width: 16rem;
-    
-    /* width: 21.9rem; */
     border: 0.43rem solid hsl(0, 100%, 50%); /*7px*/
 }
 
 .juegos-recomendados__parrafo{
-    font-family: 'Times New Roman', Times, serif;
     margin: 0.50rem auto;
 }
 .juegos-recomendados__boton{
     margin: 0.50rem auto;
-    background-color: black;
-    color: white;
-    border: 2px solid red;
+    border:0.20rem solid red;
     font-size: 0.80rem;
     padding: 0.60rem;
     font-style: italic;
 }
 
-.juegos-recomendados__boton:hover{
-    transform: scale(1.1);
-    color: red;
-    box-shadow: 0px 0px 15px red;
-}
-
 .juegos-recomendados__promo{
-    background: linear-gradient(135deg, #1a1a1a, #333);
     border-radius: 1.5rem;
     padding: 2rem;
     margin: 2rem auto;
     max-width: 1200px;
-    text-align: center;
-    border: 0.20rem solid red;
+    
 }
 
 .juegos-recomendados__promo-titulo{
-    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -139,9 +152,9 @@
 }
 
 .juegos-recomendados__promo-precio{
-    color: red;
     font-weight: bold;
     font-size: 1.3rem;
+    color: red;
 }
 
 
@@ -155,63 +168,30 @@
 }
 
 .juegos-recomendados__promo__imagen{
-
     width: 160px;
     height: 220px;
     object-fit: cover;
     border-radius: 0.5rem;
-    border: 3px solid red;
     transition: transform 0.3s, box-shadow 0.3s; /*Activo la animacion de un estado a otro-> normal a hover*/
 }
 
-.juegos-recomendados__promo__imagen:hover{
-
-    transform: scale(1.1);
-    box-shadow: 0px 0px 15px  rgb(237, 4, 4);
-    
-}
-
 .juegos-recomendados__promo__boton{
-
     margin: 1rem auto;
-    background-color: black;
     border: none;
     width: 8rem;
     font-size: 1rem;
     font-style: italic;
-    border: 2px solid red;
-    color: white;
-
-}
-
-.juegos-recomendados__promo__boton:hover{
-
-    transform: scale(1.1);
-    color: red;
-    box-shadow: 0px 0px 15px red;
-
+    border: 0.20rem solid red;
 }
 
 .Formulario{
     max-width: 43.75rem;
     padding: 1rem;
     margin: 2rem auto;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    border: 0.20rem solid red;
     border-radius: 1.2rem;
-    box-shadow: 0px 0px 20px red;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
-    color: white;
-}
-
-.Formulario__h2{
-
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-shadow: 0px 0px 10px red;
 }
 
 .Formulario__label{
@@ -221,13 +201,10 @@
 }
 
 .Formulario__entrada{
-
     width: 100%;
     padding: 0.8rem;
-    background-color: black;
     border: 0.12rem solid red;
     border-radius: 0.6rem;
-    color: white;
     font-size: 1rem;
     outline:none;
     box-sizing: border-box;
@@ -264,18 +241,15 @@
 
 .Formulario__boton--enviar{
     background-color: green;
-    color: white;
 }
 
 .Formulario__boton--enviar:hover{
-    transform: scale(1.1);
     box-shadow: 0px 0px 15px green ;
     color: black;
 }
 
 .Formulario__boton--resetear{
     background-color:hsl(0, 100%, 50%);
-    color: white;
 }
 
 .Formulario__boton--resetear:hover{
@@ -287,15 +261,12 @@
 
 .Ranking{
     margin: 2px auto;
-    background: linear-gradient(125deg,#1a1a1a, #333);
-    border: 0.31rem solid rgb(255, 0, 0);
     border-radius: 2rem;
     padding: 2rem;
     max-width: 1200px;
 }
 
 .Ranking__titulo{
-    font-size: 2rem;
     margin-bottom: 0.80rem;
 }
 
@@ -313,7 +284,6 @@
 .Ranking__imagen{
     height: 15.6rem;/*250px*/
     width: 21.8rem;/*350px*/
-    border: 0.31rem solid rgb(255, 0, 0);
 }
 
 .Ranking__parrafo{
@@ -324,24 +294,17 @@
 .Ranking__enlace{
     margin: 0.31rem auto;
     background-color: black;
-    border:0.31rem solid red;
-    color: white;
     text-decoration: none;
     padding: 5px;
 }
 
 .Ranking__enlace:hover{
 
-    box-shadow: 0px 0px 10px red;
-    color: red;
     position: relative;
 }
 
 .Reseñas-seccion{
     margin: 10px auto;
-    /* background: linear-gradient(135deg,#1a1a1a, #333);
-    border: 0.31rem solid red;
-    border-radius: 2rem; */
     padding:2rem;
     max-width: 1200px;
 }
@@ -350,20 +313,12 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-content: center;
-    gap: 10px;
+    gap: 35px;
 }
 
-.Reseñas-seccion__titulo{
 
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 0px 0px 15px red;
-}
 
 .Reseñas-seccion__card{
-
-    background: linear-gradient(135deg,#1a1a1a, #333);
-    border: 0.31rem solid red;
     border-radius: 1rem;
     padding: 1.7rem;
     max-width:26rem;
@@ -384,17 +339,13 @@
 .Reseñas-seccion__foto-perfil{
     width: 80px;
     height: 4rem;
-    border: 3px solid red;
     border-radius: 50%;
-
 }
 
 .Reseñas-seccion__perfil{
     padding: 1rem;
     font-weight: bold;
-    color: rgba(255, 0, 0, 0.904);
-    color: rgba(red, green, blue, alpha);
-    
+    color:red;
 }
 
 
@@ -403,21 +354,8 @@
     box-shadow: 0px 0px 15px red;
 }
 
-.Pie-pagina__subtitulo{
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    text-shadow: 0px 0px 15px red;
-}
-
 .Pie-pagina__listado{
     list-style: none;
-    
-}
-
-.Pie-pagina__parrafo{
-    font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 1rem;
-    
 }
 
 @media(max-width: 720px){
