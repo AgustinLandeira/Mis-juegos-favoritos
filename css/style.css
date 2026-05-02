@@ -11,7 +11,7 @@
 
 }
 
-.Encabezado__titulo,.Reseñas-seccion__titulo, .Pie-pagina__subtitulo,.Formulario__h2{
+.Encabezado__titulo,.Reseñas-seccion__titulo, .Pie-pagina__subtitulo,.Formulario__h2,.Pie-pagina__titulo{
     text-shadow: 0px 0px 15px red;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .Encabezado__enlace:hover,.juegos-recomendados__boton:hover,.Ranking__enlace:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
-.Formulario{
+.Formulario,.Pie-pagina__link:hover{
     color:red;
     box-shadow: 0px 0px 15px red; 
 }
@@ -37,7 +37,7 @@
     transform: scale(1.1);
 }
 
-.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton{
+.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton,.Pie-pagina__link:hover{
     background-color: black;
 }
 
@@ -81,7 +81,7 @@
 
 }
 
-.Encabezado__enlace:hover{
+.Encabezado__enlace:hover,.Pie-pagina__link:hover{
     border-radius: 0.31rem;   
 }
 
@@ -352,10 +352,35 @@
 .Pie-pagina{
     padding: 1rem;
     box-shadow: 0px 0px 15px red;
+    text-align: center;
 }
 
-.Pie-pagina__listado{
+.Pie-pagina__contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+}
+
+.Pie-pagina__titulo{
+    font-size: 1.4;
+    font-weight: bold;
+}
+
+.Pie-pagina__lista{
     list-style: none;
+}
+
+.Pie-pagina__link{
+    text-decoration: none;
+}
+
+.Pie-pagina__seccion{
+    max-width: 300px;
+}
+
+.Pie-pagina__parrafo,.Pie-pagina__item{
+    margin: 5px;
 }
 
 @media(max-width: 720px){
