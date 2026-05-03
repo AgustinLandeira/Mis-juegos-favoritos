@@ -5,13 +5,13 @@
     color: white;
 }
 
-.Encabezado,.Pie-pagina,.juegos-recomendados__promo,.juegos-recomendados__articulo,.Reseñas-seccion__card,.Formulario,.Ranking{
+.Encabezado,.Pie-pagina,.juegos-recomendados__promo,.juegos-recomendados__articulo,.Reseñas-seccion__card,.Formulario,.Ranking,.Juego-Destacado{
 
     background: linear-gradient(135deg,#1a1a1a, #333);
 
 }
 
-.Encabezado__titulo,.Reseñas-seccion__titulo, .Pie-pagina__subtitulo,.Formulario__h2,.Pie-pagina__titulo{
+.Encabezado__titulo,.Reseñas-seccion__titulo, .Pie-pagina__subtitulo,.Formulario__h2,.Pie-pagina__titulo,.Juego-Destacado__titulo{
     text-shadow: 0px 0px 15px red;
 }
 
@@ -23,34 +23,46 @@
     font-size: 3rem;
 }
 
-.juegos-recomendados__articulo,.juegos-recomendados__promo,.Reseñas-seccion__foto-perfil,.Reseñas-seccion__card,.Ranking__imagen,.Ranking__enlace,.Ranking,.Formulario,.juegos-recomendados__promo__imagen{
+.juegos-recomendados__articulo,.juegos-recomendados__promo,.Reseñas-seccion__foto-perfil,.Reseñas-seccion__card,.Ranking__imagen,.Ranking__enlace,.Ranking,.Formulario,.juegos-recomendados__promo__imagen,.Juego-Destacado,.Juego-Destacado__imagen{
     border: 0.20rem solid red;
 }
 
 .Encabezado__enlace:hover,.juegos-recomendados__boton:hover,.Ranking__enlace:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
-.Formulario,.Pie-pagina__link:hover{
+.Formulario,.Pie-pagina__link:hover,.Juego-Destacado__boton:hover{
     color:red;
     box-shadow: 0px 0px 15px red; 
 }
 
-.juegos-recomendados__boton:hover,.Reseñas-seccion__card:hover,.Formulario__boton--enviar:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover{
+.juegos-recomendados__boton:hover,.Reseñas-seccion__card:hover,.Formulario__boton--enviar:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
+.Juego-Destacado__imagen:hover,.Juego-Destacado__trailer__video:hover,.Juego-Destacado__boton:hover{
     transform: scale(1.1);
 }
 
-.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton,.Pie-pagina__link:hover{
+.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton,.Pie-pagina__link:hover,.Juego-Destacado__boton{
     background-color: black;
 }
 
-.juegos-recomendados__promo-titulo,.juegos-recomendados__promo-titulo,.Ranking__titulo,.Formulario__h2{
+.juegos-recomendados__promo-titulo,.juegos-recomendados__promo-titulo,.Ranking__titulo,.Formulario__h2,.Juego-Destacado__titulo{
     font-size: 2rem;
 }
 
-.Pie-pagina__parrafo,.Pie-pagina__subtitulo,.Reseñas-seccion__titulo,.Formulario__h2{
+.Pie-pagina__parrafo,.Pie-pagina__subtitulo,.Reseñas-seccion__titulo,.Formulario__h2,.Juego-Destacado__titulo,.Juego-Destacado__subtitulo{
     margin-bottom: 1rem;
 }
 
 .Pie-pagina__parrafo,.juegos-recomendados__parrafo{
     font-family: 'Times New Roman', Times, serif;
+}
+
+.juegos-recomendados__promo__boton,.Juego-Destacado__boton,.juegos-recomendados__boton{
+    margin: 1rem auto;
+    border: none;
+    width: 8rem;
+    font-size: 1rem;
+    font-style: italic;
+    border: 0.20rem solid red;
+    padding: 0.2rem;
+    border-radius: 15px;
 }
 
 .Encabezado{
@@ -125,13 +137,6 @@
 .juegos-recomendados__parrafo{
     margin: 0.50rem auto;
 }
-.juegos-recomendados__boton{
-    margin: 0.50rem auto;
-    border:0.20rem solid red;
-    font-size: 0.80rem;
-    padding: 0.60rem;
-    font-style: italic;
-}
 
 .juegos-recomendados__promo{
     border-radius: 1.5rem;
@@ -173,15 +178,6 @@
     object-fit: cover;
     border-radius: 0.5rem;
     transition: transform 0.3s, box-shadow 0.3s; /*Activo la animacion de un estado a otro-> normal a hover*/
-}
-
-.juegos-recomendados__promo__boton{
-    margin: 1rem auto;
-    border: none;
-    width: 8rem;
-    font-size: 1rem;
-    font-style: italic;
-    border: 0.20rem solid red;
 }
 
 .Formulario{
@@ -301,6 +297,102 @@
 .Ranking__enlace:hover{
 
     position: relative;
+}
+
+.Juego-Destacado{
+    max-width: 1200px;
+    margin: 8px auto;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+.Juego-Destacado__subtitulo{
+    color: red;
+    font-size: 1.4rem;
+    border: 2px solid red;
+    border-radius: 4rem;
+    background-color: black;
+    max-width: 300px;
+    margin: 2px auto;
+    padding: 1rem;
+}
+
+.Juego-Destacado__caja-parrafo{
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.45);
+    border: 0.15rem solid red;
+    border-radius: 1.2rem;
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.4);
+}
+
+.Juego-Destacado__frase{
+    font-size: 1.6rem;
+    font-style: italic;
+    color: red;
+    margin-bottom: 1.2rem;
+    text-shadow: 0px 0px 12px red;
+}
+
+.Juego-Destacado__descripcion{
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.Juego-Destacado__ficha{
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    border: 0.12rem solid red;
+}
+
+.Juego-Destacado__dato{
+    font-size: 1.1rem;
+    margin: 0.7rem 0;
+    font-weight: bold;
+}
+
+.Juego-Destacado__precio{
+    color: red;
+    font-size: 1.4rem;
+    text-shadow: 0px 0px 10px red;
+}
+
+.Juego-Destacado__dato strong{
+    color: red;
+}
+
+
+.Juego-Destacado__descripcion{
+    margin-bottom: 0.7rem;
+}
+
+
+.Juego-Destacado__contenedor{
+
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.Juego-Destacado__trailer__video{
+    width: 30rem;
+    border: 2px solid red;
+}
+
+.Juego-Destacado__imagen,.Juego-Destacado__trailer__video{
+    border-radius: 2rem;
+}
+
+.Juego-Destacado__imagen{
+    height: 17rem;
+    width: 15rem;
 }
 
 .Reseñas-seccion{
