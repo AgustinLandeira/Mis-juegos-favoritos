@@ -46,17 +46,16 @@ El diseño de la página utiliza una temática gamer con:
 
 ## 📂 Estructura del proyecto
 
-  📁 proyecto
-  ├── 📁 css
-  │ └── style.css
-  
-  ├── 📁 img
-  │ └── (imágenes de juegos)
-  
-  ├── 📁 video
-  │ └── (trailer del juego destacado)
-  
-  ├── index.html
+```
+📁 proyecto
+ ├── 📁 css
+ │    └── style.css
+ ├── 📁 img
+ │    └── (imágenes de juegos)
+ ├── 📁 video
+ │    └── (trailer del juego destacado)
+ ├── index.html
+```
 
 ## 📈 Objetivo del proyecto
 
