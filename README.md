@@ -73,3 +73,9 @@ Este proyecto fue realizado como parte del aprendizaje en desarrollo web, con el
 - Agregar interactividad con JavaScript
 - Implementar carrito de compras
 - Mejorar el diseño responsive
+
+---
+
+## 🌐  Pagina
+
+👉 [Ver sitio online](https://agustinlandeira.github.io/Tienda-de-juegos/)
