@@ -484,11 +484,20 @@
 
 }
 
-@media(max-width: 513px){
+@media(max-width: 550px){
 
     .Reseñas-seccion__contenedor{
 
         grid-template-columns: repeat(1,1fr);
     }
 
+    .Juego-Destacado__trailer__video{
+        max-width: 20rem;
+    }
+
+    .Reseñas-seccion__card{
+        max-width:26rem;
+    }
+
+    /* max-width:26rem; */
 }
