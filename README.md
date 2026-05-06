@@ -76,6 +76,6 @@ Este proyecto fue realizado como parte del aprendizaje en desarrollo web, con el
 
 ---
 
-## Pagina
+## 🌐  Pagina
 
-Para ver el proyecto, acceda al siguiente link: https://agustinlandeira.github.io/Tienda-de-juegos/
+👉 [Ver sitio online](https://agustinlandeira.github.io/Tienda-de-juegos/)
