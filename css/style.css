@@ -499,5 +499,16 @@
         max-width:26rem;
     }
 
-    /* max-width:26rem; */
+}
+
+@media(max-width:450px){
+
+    .juegos-recomendados__articulo{
+
+        height: 500px;
+    }
+
+    .juegos-recomendados__imagen{
+        height: 260px;
+    }
 }
