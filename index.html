@@ -6,13 +6,18 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/45b6a2b2fd.js" crossorigin="anonymous"></script>
-     <link
+    <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    />
     <title>Juegos</title>
 </head>
 <body>
+    <div id="Carrito" class="Oculto">
+        <button class="Btncarrito">Salir</button>
+
+        <div id="productosCarrito"></div>
+    </div>
     
     <header id="Inicio" class="Encabezado"><!--Encabezado-->
 
@@ -23,30 +28,35 @@
             <ul class="Encabezado__lista animate__animated animate__backInLeft" ><!--Hago una lista desordenada-->
                 <li class="Encabezado__item"><a class="Encabezado__enlace" href="#Inicio"> <i class="fa-solid fa-house" style="color: white;"></i> Inicio</a></li>
                 <li class="Encabezado__item"><a class="Encabezado__enlace" href="#Juegos-recomendados"> <i class="fa-solid fa-gamepad" style="color: white;"></i> Juegos recomendados</a></li>
-                <li class="Encabezado__item"><a class="Encabezado__enlace"  href="#Ranking"><i class="fa-solid fa-trophy" style="color:white;"></i> Ranking de juegos </a></li>
+                <li class="Encabezado__item"><a class="Encabezado__enlace"  href="#Ranking"><i class="fa-solid fa-trophy" style="color:white;"></i> Ranking</a></li>
                 <li class="Encabezado__item" ><a class="Encabezado__enlace" href="#contacto"><i class="fa-solid fa-phone" style="color: white;"></i>  Contacto</a></li>
                 <li class="Encabezado__item" ><a class="Encabezado__enlace" href="#Reseñas"><i class="fa-solid fa-comment" style="color: white;"></i>  Reseñas</a></li>
+
             </ul>
+
+            <div class="Encabezado__contenedor-carrito">
+                    <button id="boton-carrito" class="Encabezado__boton-carrito"> 🛒 Ver carrito 0</button>
+            </div>
 
         </nav>
 
     </header>
 
-    
-
-    <main id="Juegos-recomendados" class="juegos-recomendados "> <!-- Tema principal -->
+    <main id="Juegos-recomendados" class="juegos-recomendados"> <!-- Tema principal -->
 
         <h2 class="juegos-recomendados__subtitulo animate__animated animate__backInLeft">Juegos que te recomendamos:</h2>
 
         <section class="Juegos-recomendados__contenedor"></section>
 
-        <!--  PACKS -->
+        <!-- PACKS -->
 
         <section class="juegos-recomendados__promo"></section>
 
-        <script type="module" src="/js/listarJuegos.js">
-        
-        </script>
+        <!-- LLAMO AL MODULO PARA CREAR LAS CARDS DE FORMA DINAMICA -->
+
+        <script type="module" src="/js/listarJuegos.js"> </script>
+
+        <script type="module" src="./js/carrito.js"></script>
 
         <!-- BLOQUE: Ranking -->
 
@@ -103,58 +113,7 @@
 
         </section>
 
-        <section class="Juego-Destacado">
-
-            <h1 class="Juego-Destacado__titulo">⭐ Juego del momento</h1>
-
-            <h3 class="Juego-Destacado__subtitulo">Resident Evil Requiem</h3>
-
-            <div class="Juego-Destacado__caja-parrafo">
-
-                <p class="Juego-Destacado__frase">
-                    “El miedo evoluciona una vez más...”
-                </p>
-
-                <p class="Juego-Destacado__descripcion">
-                    Resident Evil Requiem te sumerge en una nueva experiencia de terror psicológico donde cada paso puede ser el último. 
-                    Enfrentate a escenarios oscuros, criaturas impredecibles y una historia intensa cargada de misterio, supervivencia y adrenalina.
-                    Con gráficos de última generación, una ambientación escalofriante y mecánicas renovadas, esta entrega promete llevar la legendaria saga de horror a un nivel más extremo.
-                </p>
-
-                <div class="Juego-Destacado__ficha">
-                    <p class="Juego-Destacado__dato"><strong>🎮 Género:</strong> Terror | Supervivencia | Acción | Aventura</p>
-
-                    <p class="Juego-Destacado__dato"><strong>🕹 Plataformas:</strong> PC | PlayStation 5 | Xbox Series X/S</p>
-
-                    <p class="Juego-Destacado__dato"><strong>🔥 Estado:</strong> Disponible ahora</p>
-
-                    <p class="Juego-Destacado__dato Juego-Destacado__precio">
-                        <strong>💲 Precio:</strong> $95.000 ARG
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="Juego-Destacado__contenedor">
-
-                <div class="Juego-Destacado__contenedor-imagen">
-
-                    <img class="Juego-Destacado__imagen" src="https://images.igdb.com/igdb/image/upload/t_cover_big/cobmj0.webp" alt="Resident Evil Requiem">
-
-                </div>
-
-                <div class="Juego-Destacado__trailer">
-
-                    <video class="Juego-Destacado__trailer__video"  controls>
-                        <source src="video/Resident Evil Requiem - Launch Trailer.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-            </div>
-
-            <button class="Juego-Destacado__boton">Comprar</button>
-
-        </section>
+        <section class="Juego-Destacado"></section>
 
         <!-- RESEÑAS -->
        

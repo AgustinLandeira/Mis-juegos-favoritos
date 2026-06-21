@@ -28,17 +28,17 @@
 }
 
 .Encabezado__enlace:hover,.juegos-recomendados__boton:hover,.Ranking__enlace:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
-.Formulario,.Pie-pagina__link:hover,.Juego-Destacado__boton:hover{
+.Formulario,.Pie-pagina__link:hover,.Juego-Destacado__boton:hover,.Encabezado__boton-carrito,.Btncarrito,.contenedor-Resultado__boton{
     color:red;
     box-shadow: 0px 0px 15px red; 
 }
 
-.juegos-recomendados__boton:hover,.Reseñas-seccion__card:hover,.Formulario__boton--enviar:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
-.Juego-Destacado__imagen:hover,.Juego-Destacado__trailer__video:hover,.Juego-Destacado__boton:hover{
+.btnEliminar:hover,.juegos-recomendados__boton:hover,.Reseñas-seccion__card:hover,.Formulario__boton--enviar:hover,.juegos-recomendados__promo__boton:hover,.juegos-recomendados__promo__imagen:hover,
+.Juego-Destacado__imagen:hover,.Juego-Destacado__trailer__video:hover,.Juego-Destacado__boton:hover,.Encabezado__boton-carrito:hover,.Btncarrito:hover,.contenedor-Resultado__boton:hover{
     transform: scale(1.1);
 }
 
-.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton,.Pie-pagina__link:hover,.Juego-Destacado__boton{
+.Encabezado__enlace:hover,.juegos-recomendados__boton,.juegos-recomendados,.Formulario__entrada,.juegos-recomendados__promo__boton,.Pie-pagina__link:hover,.Juego-Destacado__boton,.Encabezado__boton-carrito,.Btncarrito,.contenedor-Resultado__boton{
     background-color: black;
 }
 
@@ -54,7 +54,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.juegos-recomendados__promo__boton,.Juego-Destacado__boton,.juegos-recomendados__boton{
+.juegos-recomendados__promo__boton,.Juego-Destacado__boton,.juegos-recomendados__boton,.Encabezado__boton-carrito,.Btncarrito,.contenedor-Resultado__boton{
     margin: 1rem auto;
     border: none;
     width: 8rem;
@@ -70,6 +70,18 @@
     z-index:2;
     box-shadow: 0px 0px 25px red;
     padding-bottom: 0.8rem;
+}
+
+
+
+.Encabezado__boton-carrito{
+    
+    margin-right: 1rem;
+} 
+
+.Encabezado__navegacion{
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -473,6 +485,97 @@
 
 .Pie-pagina__parrafo,.Pie-pagina__item{
     margin: 5px;
+}
+
+#Carrito{
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background: linear-gradient(135deg,#1a1a1a, #333);
+    border-left:2px solid red;
+    height: 100vh;
+    width: 30rem;
+    z-index: 3;
+    text-align: center;
+    overflow-y: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.Oculto{
+    display: none;
+}
+
+.Btncarrito{
+    position: fixed;
+    right: 1.4rem;
+    width: 6rem;
+
+}
+
+.btnEliminar{
+    
+    padding: 0.6rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: black;
+    font-style: italic;
+    border: 2px solid red;
+    box-shadow: 0px 0px 16px red;
+    color: red;
+
+}
+
+.juegos-carrito__imagen{
+    height: 10.9rem;
+    width: 8rem;
+    border-radius: 20px;
+}
+
+.tarjetaJuego{
+
+    margin: 1rem;
+    padding: 0.7rem;
+}
+
+.carrito-precio{
+
+    margin: 0.5rem;
+}
+
+.contenedor-Resultado{
+
+    margin: 5rem;
+    max-width: 300px;
+    border-radius: 1rem;
+    padding: 1.4rem;
+    background: linear-gradient(135deg,black);
+    border: 2px solid red;
+    border-radius: 2rem;
+}
+
+.contenedor-Resultado__titulo{
+    
+    color: red;
+    text-shadow:0px 0px 10px;
+    font-size: 1.8rem;
+}
+
+.contenedor-Resultado__parrafo{
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+.contenedor-Resultado__campo{
+    color: red;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.contenedor-Resultado__boton{
+    padding: 0.3rem;
+    width: 7rem;
+    background: rgba(128, 128, 128, 0.303);
 }
 
 @media(max-width: 720px){
