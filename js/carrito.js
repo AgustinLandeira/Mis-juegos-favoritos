@@ -1,22 +1,33 @@
 import {listaJuegos,listaPacks,juegosDelMomento} from "./listas.js"
+import { mostrarModal } from "./modals.js"
 
 function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
 
     function crearTarjetaJuego(juego){
 
-        return `<div class="tarjetaJuego"> 
+        return `
+            <div class="tarjetaJuego">
 
-                <h3 class="carrito-titulo">${juego.nombre}</h3>
+                <div class='tarjeta-juego__seccion-img'>
 
+                    <h3 class="carrito-titulo">${juego.nombre}</h3>
+                    <img class="juegos-carrito__imagen" src="${juego.foto}"img>
+                
+                </div>
                 <p class="carrito-precio">Precio: $${juego.precio}</p>
-
-                <img class="juegos-carrito__imagen" src="${juego.foto}"img>
-            
+                <p class="carrito-cantidad">Cantidad: ${juego.cantidad}</p>
                 <button class="btnEliminar" data-id="${juego.id}">Quitar</button>
             </div>
         
         `
 
+    }
+
+    function mostrarMensaje(mensaje){
+
+        return `
+            <h3>${mensaje}</h3>
+        `
     }
 
     function buscarElemento(valor,lista,campo){
@@ -26,15 +37,66 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
     }
 
     function agregarJuego(juego){
-        ultimo_id = ultimo_id + 1
-        juego.id = ultimo_id
-        carrito.push(juego)
-        actualizarCarrito()
+
+        let juegoYaAgregado = buscarElemento(juego.nombre,carrito,"nombre")
+
+        if(juegoYaAgregado){
+
+            sumarCantidad(juegoYaAgregado)
+            sumarContadorJuegos()
+
+        }else{
+            ultimo_id = ultimo_id + 1
+            juego.id = ultimo_id
+
+            juego.cantidad = 1
+
+            carrito.push(juego)
+            sumarContadorJuegos()
+            actualizarCarrito()
+        }
+
+        actualizarLocalStorage("carrito",carrito)
+        actualizarLocalStorage("cantidadJuegos",cantidadJuegos)
+    }
+
+    function sumarCantidad(juegoRepetido){
+
+        for(let juego of carrito){
+
+            if (juego.nombre === juegoRepetido.nombre){
+
+                juego.precio += juegoRepetido.precio
+                juego.cantidad += 1
+            }
+        }
     }
 
     function actualizarCarrito(){
 
-        carritoCompras.textContent = "🛒 Ver carrito "+carrito.length
+        carritoCompras.textContent = "🛒 Ver carrito "+cantidadJuegos
+    }
+
+    function actualizarLocalStorage(key,value){
+        localStorage.setItem(key,JSON.stringify(value))
+    }
+
+
+    function borrarItemLocalStorage(key){
+
+        localStorage.removeItem(key)
+    }
+
+    function sumarContadorJuegos(){
+
+        cantidadJuegos += 1
+        actualizarCarrito()
+    }
+
+    function restarContadorJuegos(cantidad){
+
+        cantidadJuegos -= cantidad
+        actualizarCarrito()
     }
 
     function listarCarrito(primeraVez){
@@ -67,17 +129,27 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
     }
 
     function eliminarJuegoCarrito(id){
-        console.log("Eliminar", id);
+        
+        const juegoAEliminar = buscarElemento(id,carrito,"id") 
         const indice = carrito.findIndex(juego => juego.id == id)
         
         carrito.splice(indice,1)
+
+        restarContadorJuegos(juegoAEliminar.cantidad)
+
+
         actualizarCarrito()
         limpiarCarrito()
-        listarCarrito(false)
-        // console.log("Lista despues de eliminar uno: ")
-        // for(let juego of carrito){
-        //     console.log(juego)
-        // }
+
+        if(carrito.length > 0){
+
+            listarCarrito(false)
+
+            actualizarLocalStorage("carrito",carrito)
+            actualizarLocalStorage("cantidadJuegos",cantidadJuegos)
+        }else{
+            seccionProductos.innerHTML += mostrarMensaje("No hay productos en tu carrito")
+        }
 
     }
 
@@ -105,6 +177,9 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
         const parrafoCantidad = document.createElement("p")
         const parrafoPrecioTotal = document.createElement("p")
         const botonComprar = document.createElement("button")
+        const btnVaciarCarrito = document.createElement("button")
+
+        const divContenedorBotones = document.createElement("div")
 
         const cantidadStrong = document.createElement("strong")
         const precioStrong = document.createElement("strong")
@@ -113,18 +188,22 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
         agregarClaseAlElemento(titulo,"contenedor-Resultado__titulo")
         agregarClaseAlElemento(parrafoCantidad,"contenedor-Resultado__parrafo")
         agregarClaseAlElemento(parrafoPrecioTotal,"contenedor-Resultado__parrafo")
-        agregarClaseAlElemento(botonComprar,"contenedor-Resultado__boton")
+        agregarClaseAlElemento(botonComprar,"contenedor-Resultado__boton--comprar")
+        agregarClaseAlElemento(btnVaciarCarrito,"contenedor-Resultado__boton--vaciar")//contenedor-Resultado__boton
+        agregarClaseAlElemento(divContenedorBotones,"contenedor-Resultado__div-botones")
+
+        botonComprar.classList.add("contenedor-Resultado__boton")
+        btnVaciarCarrito.classList.add("contenedor-Resultado__boton")
 
         agregarTextoAlElemento(titulo,"Resumen de la compra")
         agregarTextoAlElemento(cantidadStrong,"Cantidad de productos: ")
-        agregarTextoAlElemento(parrafoCantidad,carrito.length)
+        agregarTextoAlElemento(parrafoCantidad,cantidadJuegos)
 
         agregarTextoAlElemento(precioStrong,"Precio total: ")
         agregarTextoAlElemento(parrafoPrecioTotal,`$${calcularPrecioTotal()}`)
         agregarTextoAlElemento(botonComprar,"Confirmar compra")
+        agregarTextoAlElemento(btnVaciarCarrito,"Vaciar Carrito")
 
-        // agregarContenidoAlPadre(parrafoCantidad,cantidadStrong)
-        // agregarContenidoAlPadre(parrafoPrecioTotal,precioStrong)
 
         parrafoCantidad.innerHTML = `
         
@@ -139,8 +218,11 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
         agregarContenidoAlPadre(contenedorResultado,titulo)
         agregarContenidoAlPadre(contenedorResultado,parrafoCantidad)
         agregarContenidoAlPadre(contenedorResultado,parrafoPrecioTotal)
-        agregarContenidoAlPadre(contenedorResultado,botonComprar)
+        agregarContenidoAlPadre(divContenedorBotones,botonComprar)
+        agregarContenidoAlPadre(divContenedorBotones,btnVaciarCarrito)
+        agregarContenidoAlPadre(contenedorResultado,divContenedorBotones)
         agregarContenidoAlPadre(contenedorCarrito,contenedorResultado)
+        
 
     }
 
@@ -173,8 +255,11 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
         return total
     }
 
-    let carrito = []
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+
     let ultimo_id = 0
+    
+    let cantidadJuegos = parseInt(localStorage.getItem("cantidadJuegos")) || 0 
 
     const contenedor_juegos = document.querySelector(".Juegos-recomendados__contenedor")
     const carritoCompras = document.getElementById("boton-carrito")
@@ -183,6 +268,8 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
 
     const contenedorCarrito = document.getElementById("Carrito")
     const seccionProductos = document.getElementById("productosCarrito")
+
+    if(cantidadJuegos > 0)actualizarCarrito()
 
     contenedor_juegos.addEventListener("click",function (event){
 
@@ -219,7 +306,8 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
             // MostrarCarrito()
             listarCarrito(true)
         }else{
-            console.log("No hay productos para mostrar")
+            MostrarCarrito()
+            seccionProductos.innerHTML += mostrarMensaje("No hay productos en tu carrito")
         }   
         
     })
@@ -227,6 +315,26 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
     botonJuegoDestacado.addEventListener("click",function(){
 
         agregarJuego({nombre:juegosDelMomento[0].nombre,precio:juegosDelMomento[0].precio,foto:juegosDelMomento[0].foto})
+    })
+
+    contenedorCarrito.addEventListener("click",function(event){
+        
+        if(event.target.className == "contenedor-Resultado__boton--comprar contenedor-Resultado__boton"){
+            mostrarModal("¡Gracias por su compra!",`Total a pagar: $${calcularPrecioTotal()}`,"success")
+        }else if(event.target.className == "contenedor-Resultado__boton--vaciar contenedor-Resultado__boton"){
+
+            carrito = []
+            cantidadJuegos = 0
+
+            borrarItemLocalStorage("carrito")
+            borrarItemLocalStorage("cantidadJuegos")
+
+            limpiarCarrito()
+            actualizarCarrito()
+
+            seccionProductos.innerHTML += mostrarMensaje("No hay productos en tu carrito")
+
+        }
     })
 
 }
