@@ -105,21 +105,3 @@ export let juegosDelMomento = [
     }
 
 ]
-
-
-// fetch("https://6a3b0d87e4a07f202e148887.mockapi.io/juegos/juegos")
-// .then(response =>{
-
-//     if(!response.ok){
-
-//         throw new Error(`Error HTTP ${response.status}`)
-//     }
-//     return response.json()
-// }).then(data=>{
-//     listaJuegos = data
-//     console.log(listaJuegos)
-//     // data.forEach(juego =>{
-//     //     listaJuegos.push(juego)
-//     //     console.log(juego)
-//     // })
-// })
