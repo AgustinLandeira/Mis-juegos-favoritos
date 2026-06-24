@@ -100,7 +100,7 @@ export let juegosDelMomento = [
         genero:"Terror | Supervivencia | Acción | Aventura",
         plataforma:"PC | PlayStation 5 | Xbox Series X/S",
         precio:95000,
-        foto:"https:images.igdb.com/igdb/image/upload/t_cover_big/cobmj0.webp",
+        foto:"https://images.igdb.com/igdb/image/upload/t_cover_big/cobmj0.webp",
         video:"video/ResidentEvil.mp4"
     }
 
