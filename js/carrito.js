@@ -105,9 +105,6 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
 
         for(let juego of carrito){
 
-            // let producto = "El juego es: "+juego.nombre + " y su precio: "+juego.precio
-            // console.log(producto)
-
             let tarjeta = crearTarjetaJuego(juego)
 
             seccionProductos.innerHTML += tarjeta
@@ -311,7 +308,7 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
         }   
         
     })
-
+    console.log(botonJuegoDestacado)
     botonJuegoDestacado.addEventListener("click",function(){
 
         agregarJuego({nombre:juegosDelMomento[0].nombre,precio:juegosDelMomento[0].precio,foto:juegosDelMomento[0].foto})
