@@ -1,4 +1,4 @@
-import {lista_juegos,lista_packs,lista_comentarios} from "./listas.js"
+import {listaJuegos,listaPacks,listaComentarios,juegosDelMomento} from "./listas.js"
 
 function recorrerLista(lista,crearTarjeta,selectorNombre){
 
@@ -78,7 +78,7 @@ function crearTarjetaJuego(juego){
             <p class="juegos-recomendados__parrafo"><strong>Genero:</strong> ${juego.genero}</p>
             <p class="juegos-recomendados__parrafo"><strong>Precio:</strong> $${juego.precio}</p>
 
-            <button class="juegos-recomendados__boton">Comprar</button>
+            <button class="juegos-recomendados__boton" data-id='${juego.id}'>Comprar</button>
         </article>
     `
 
@@ -113,7 +113,7 @@ function crearTarjetaPack(pack){
 
                 </div>
 
-                <button class="juegos-recomendados__promo__boton">Comprar Pack ${pack.nombre}</button>
+                <button class="juegos-recomendados__promo__boton" data-nombre='${pack.nombre}'>Comprar Pack ${pack.nombre}</button>
 
             </div>
         `
@@ -144,6 +144,74 @@ function crearTarjetaComentario(comentario){
             </div>
         `
 }
-recorrerLista(lista_juegos,crearTarjetaJuego,".Juegos-recomendados__contenedor")
-recorrerLista(lista_packs,crearTarjetaPack,".juegos-recomendados__promo")
-recorrerLista(lista_comentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")
+
+function crearTarjetaJuegoMomento(juego){
+
+    /*
+    Se encarga de generar un maquetado en forma de card, en donde va a incluir los datos del juego del momento.
+    
+    Params:
+        juego: Va a ser un objeto, nos sirve para hacer el maquetado.
+    
+    return: Devuelve una card en donde describe el juego del momento.
+    
+    */
+
+    return `
+            <h1 class="Juego-Destacado__titulo">⭐ Juego del momento</h1>
+
+            <h3 class="Juego-Destacado__subtitulo">${juego.nombre}</h3>
+
+            <div class="Juego-Destacado__caja-parrafo">
+
+                <p class="Juego-Destacado__frase">
+                    ${juego.fraseDestacada}
+                </p>
+
+                <p class="Juego-Destacado__descripcion">
+                    ${juego.descripcion}
+                </p>
+
+                <div class="Juego-Destacado__ficha">
+                    <p class="Juego-Destacado__dato"><strong>🎮 Género:</strong> ${juego.genero}</p>
+
+                    <p class="Juego-Destacado__dato"><strong>🕹 Plataformas:</strong>${juego.plataforma}</p>
+
+                    <p class="Juego-Destacado__dato"><strong>🔥 Estado:</strong> Disponible ahora</p>
+
+                    <p class="Juego-Destacado__dato Juego-Destacado__precio">
+                        <strong>💲 Precio:</strong> $${juego.precio}ARG
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="Juego-Destacado__contenedor">
+
+                <div class="Juego-Destacado__contenedor-imagen">
+
+                    <img class="Juego-Destacado__imagen" src=${juego.foto} alt="Resident Evil Requiem">
+
+                </div>
+
+                <div class="Juego-Destacado__trailer">
+
+                    <video class="Juego-Destacado__trailer__video"  controls>
+                        <source src="${juego.video}" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+            <button class="Juego-Destacado__boton">Comprar</button>
+    
+    `
+
+
+
+}
+
+recorrerLista(listaJuegos,crearTarjetaJuego,".Juegos-recomendados__contenedor")
+recorrerLista(listaPacks,crearTarjetaPack,".juegos-recomendados__promo")
+recorrerLista(listaComentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")
+recorrerLista(juegosDelMomento,crearTarjetaJuegoMomento,".Juego-Destacado")
