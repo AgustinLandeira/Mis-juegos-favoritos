@@ -1,7 +1,7 @@
 export let listaJuegos = [
             {
                 id:1,
-                titulo:"THE LAST OF US",srcImagen:"/img/The_last_of_us.jpg",
+                titulo:"THE LAST OF US",srcImagen:"img/The_last_of_us.jpg",
                 descripcion:"Es un juego de aventura y supervivencia con una historia muy profunda y emotiva. ",
                 genero:"Accion, Aventura, Supervivencia y Drama.",precio:60000},
                 
