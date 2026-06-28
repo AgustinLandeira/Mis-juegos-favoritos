@@ -650,7 +650,7 @@
 
 }
 
-@media(max-width:450px){
+@media(max-width:475px){
 
     .juegos-recomendados__articulo{
 
@@ -659,5 +659,12 @@
 
     .juegos-recomendados__imagen{
         height: 260px;
+    }
+
+    .Encabezado__boton-carrito{
+
+        width: 4rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
     }
 }
