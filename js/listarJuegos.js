@@ -1,4 +1,5 @@
-import {listaJuegos,listaPacks,listaComentarios,juegosDelMomento} from "./listas.js"
+import {listaPacks,listaComentarios,juegosDelMomento} from "./listas.js"
+import { iniciarCarrito } from "./carrito.js"
 
 function recorrerLista(lista,crearTarjeta,selectorNombre){
 
@@ -207,11 +208,22 @@ function crearTarjetaJuegoMomento(juego){
     
     `
 
-
-
 }
 
-recorrerLista(listaJuegos,crearTarjetaJuego,".Juegos-recomendados__contenedor")
-recorrerLista(listaPacks,crearTarjetaPack,".juegos-recomendados__promo")
-recorrerLista(listaComentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")
-recorrerLista(juegosDelMomento,crearTarjetaJuegoMomento,".Juego-Destacado")
+fetch('https://6a3b0d87e4a07f202e148887.mockapi.io/juegos/juegos')
+.then(response => response.json())
+.then(data=>{
+    let lista = data
+    console.log(data[0]["titulo"]),
+    console.log("Ejecutando elr esultado de la promesa")
+
+    recorrerLista(lista,crearTarjetaJuego,".Juegos-recomendados__contenedor")
+    recorrerLista(listaPacks,crearTarjetaPack,".juegos-recomendados__promo")
+    recorrerLista(listaComentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")
+    recorrerLista(juegosDelMomento,crearTarjetaJuegoMomento,".Juego-Destacado")
+
+    iniciarCarrito(lista,listaPacks,juegosDelMomento)
+})
+
+
+

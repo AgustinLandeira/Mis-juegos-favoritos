@@ -27,10 +27,3 @@ export function mostrarPreguntaModal(titulo,texto){
 
     })
 }
-
-// .then((result)=>{
-
-//         if(result.isConfirmed){
-//             mostrarPreguntaModal("Vaciaste todo")
-//         }
-//     })
