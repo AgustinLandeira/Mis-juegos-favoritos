@@ -1,5 +1,5 @@
 import {listaJuegos,listaPacks,juegosDelMomento} from "./listas.js"
-import { mostrarModal } from "./modals.js"
+import { mostrarExitoModal,mostrarPreguntaModal } from "./modals.js"
 
 function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
 
@@ -58,6 +58,7 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
 
         actualizarLocalStorage("carrito",carrito)
         actualizarLocalStorage("cantidadJuegos",cantidadJuegos)
+        mostrarExitoModal("Se agrego al carrito!",`${juego.nombre} esta en tu carrito.`,"success")
     }
 
     function sumarCantidad(juegoRepetido){
@@ -317,19 +318,28 @@ function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
     contenedorCarrito.addEventListener("click",function(event){
         
         if(event.target.className == "contenedor-Resultado__boton--comprar contenedor-Resultado__boton"){
-            mostrarModal("¡Gracias por su compra!",`Total a pagar: $${calcularPrecioTotal()}`,"success")
+            mostrarExitoModal("¡Gracias por su compra!",`Total a pagar: $${calcularPrecioTotal()}`,"success")
         }else if(event.target.className == "contenedor-Resultado__boton--vaciar contenedor-Resultado__boton"){
+            mostrarPreguntaModal("¿ Estas seguro de vaciar el carrito ?","Si confirmas, tu carrito va a estar vacio.").then((result)=>{
 
-            carrito = []
-            cantidadJuegos = 0
 
-            borrarItemLocalStorage("carrito")
-            borrarItemLocalStorage("cantidadJuegos")
+                if(result.isConfirmed){
+                    mostrarExitoModal("Vaciaste tu carrito!","Borraste todos tus juegos del carrito.","success")
+                    carrito = []
+                    cantidadJuegos = 0
 
-            limpiarCarrito()
-            actualizarCarrito()
+                    borrarItemLocalStorage("carrito")
+                    borrarItemLocalStorage("cantidadJuegos")
 
-            seccionProductos.innerHTML += mostrarMensaje("No hay productos en tu carrito")
+                    limpiarCarrito()
+                    actualizarCarrito()
+
+                    seccionProductos.innerHTML += mostrarMensaje("No hay productos en tu carrito")
+                }
+            })
+
+
+            
 
         }
     })
