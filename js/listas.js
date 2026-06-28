@@ -1,30 +1,30 @@
-export let listaJuegos = [
-            {
-                id:1,
-                titulo:"THE LAST OF US",srcImagen:"img/The_last_of_us.jpg",
-                descripcion:"Es un juego de aventura y supervivencia con una historia muy profunda y emotiva. ",
-                genero:"Accion, Aventura, Supervivencia y Drama.",precio:60000},
+// export let listaJuegos = [
+//             {
+//                 id:1,
+//                 titulo:"THE LAST OF US",srcImagen:"img/The_last_of_us.jpg",
+//                 descripcion:"Es un juego de aventura y supervivencia con una historia muy profunda y emotiva. ",
+//                 genero:"Accion, Aventura, Supervivencia y Drama.",precio:60000},
                 
-            {   id:2,
-                titulo:"GTA V",srcImagen:"img/Gta.jpg", 
-                genero:"Accion, Aventura y Mundo abierto.",precio:80000,
-                descripcion:"Es un juego de mundo abierto donde podés explorar una ciudad enorme, realizar misiones y hacer prácticamente lo que quieras.",
-            },
+//             {   id:2,
+//                 titulo:"GTA V",srcImagen:"img/Gta.jpg", 
+//                 genero:"Accion, Aventura y Mundo abierto.",precio:80000,
+//                 descripcion:"Es un juego de mundo abierto donde podés explorar una ciudad enorme, realizar misiones y hacer prácticamente lo que quieras.",
+//             },
 
-            {
-                id:3,
-                titulo:"Rocket League",srcImagen:"img/Rocket_league.jpg",
-                descripcion:"Es un juego que combina fútbol con autos, donde tenés que hacer goles manejando autos. Es rápido, divertido y requiere mucha habilidad y reflejos.",
-                genero:"Deportes",precio:10000
-            },
+//             {
+//                 id:3,
+//                 titulo:"Rocket League",srcImagen:"img/Rocket_league.jpg",
+//                 descripcion:"Es un juego que combina fútbol con autos, donde tenés que hacer goles manejando autos. Es rápido, divertido y requiere mucha habilidad y reflejos.",
+//                 genero:"Deportes",precio:10000
+//             },
 
-            {
-                id:4,
-                titulo:"Call of duty",srcImagen:"img/Cod.jpg",
-                descripcion:"Es un juego de disparos en primera persona con modos de campaña y multijugador. Tiene mucha acción, armas variadas y mapas dinámicos.",
-                genero:"Accion y Shooter",precio:40000
-            }
-]
+//             {
+//                 id:4,
+//                 titulo:"Call of duty",srcImagen:"img/Cod.jpg",
+//                 descripcion:"Es un juego de disparos en primera persona con modos de campaña y multijugador. Tiene mucha acción, armas variadas y mapas dinámicos.",
+//                 genero:"Accion y Shooter",precio:40000
+//             }
+// ]
 
 export let listaPacks = [
 
