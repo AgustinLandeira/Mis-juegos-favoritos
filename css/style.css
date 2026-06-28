@@ -667,4 +667,18 @@
         font-size: 0.7rem;
         padding: 0.5rem;
     }
+
+    .tarjetaJuego{
+
+        max-width:50em;
+        padding: 0.1rem;
+        grid-template-columns:repeat(4,1fr);
+        gap: 15px;
+    }
+
+    .juegos-carrito__imagen{
+        width: 4rem;
+        height: 3rem;
+        
+    }
 }
