@@ -209,14 +209,25 @@ function crearTarjetaJuegoMomento(juego){
     `
 
 }
+function mostrarSpinner(){
+    spinner.classList.remove("oculto");
+}
+
+function ocultarSpinner(){
+    spinner.classList.add("oculto");
+}
+
+const spinner = document.getElementById("spinner");
+mostrarSpinner()
 
 fetch('https://6a3b0d87e4a07f202e148887.mockapi.io/juegos/juegos')
 .then(response => response.json())
 .then(data=>{
-    let lista = data
-    console.log(data[0]["titulo"]),
-    console.log("Ejecutando elr esultado de la promesa")
+    
+    ocultarSpinner()
 
+    let lista = data
+    
     recorrerLista(lista,crearTarjetaJuego,".Juegos-recomendados__contenedor")
     recorrerLista(listaPacks,crearTarjetaPack,".juegos-recomendados__promo")
     recorrerLista(listaComentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")

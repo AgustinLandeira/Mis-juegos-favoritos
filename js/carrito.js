@@ -206,12 +206,13 @@ export function iniciarCarrito(listaJuegos,listaPacks,juegosDelMomento){
         actualizarCarrito()
         limpiarCarrito()
 
+        actualizarLocalStorage("carrito",carrito)
+        actualizarLocalStorage("cantidadJuegos",cantidadJuegos)
+
         if(carrito.length > 0){
 
             listarCarrito(false)
 
-            actualizarLocalStorage("carrito",carrito)
-            actualizarLocalStorage("cantidadJuegos",cantidadJuegos)
         }else{
             seccionProductos.innerHTML += mostrarMensaje("No hay productos en tu carrito")
         }
