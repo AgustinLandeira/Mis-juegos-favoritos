@@ -23,7 +23,7 @@ function validarMaximo(inputForm,errorInput,maximo,mensaje){
 
     /*Valida que el input del fomulario no pase el maximo de caracteres
     params:
-        inputForm:Es el input del fomulario
+        inputForm: Es el input del fomulario
         errorInput: EL error que se va a mostrar abajo de dicho input
         mensaje: El mensaje de error de porque el input es invalido
     return:
