@@ -210,31 +210,40 @@ function crearTarjetaJuegoMomento(juego){
 
 }
 function mostrarSpinner(){
+    /*Muestra el spinner */
     spinner.classList.remove("oculto");
 }
 
 function ocultarSpinner(){
+    /*Oculta el spinner */
     spinner.classList.add("oculto");
 }
 
-const spinner = document.getElementById("spinner");
-mostrarSpinner()
 
-fetch('https://6a3b0d87e4a07f202e148887.mockapi.io/juegos/juegos')
-.then(response => response.json())
-.then(data=>{
-    
-    ocultarSpinner()
+function traerApi(API){
+    /*Me trae los datos de una API */
+    const spinner = document.getElementById("spinner");
+    mostrarSpinner()
 
-    let lista = data
-    
-    recorrerLista(lista,crearTarjetaJuego,".Juegos-recomendados__contenedor")
-    recorrerLista(listaPacks,crearTarjetaPack,".juegos-recomendados__promo")
-    recorrerLista(listaComentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")
-    recorrerLista(juegosDelMomento,crearTarjetaJuegoMomento,".Juego-Destacado")
+    fetch(API)
+    .then(response => response.json())
+    .then(data=>{
 
-    iniciarCarrito(lista,listaPacks,juegosDelMomento)
-})
+        ocultarSpinner()
+
+        let lista = data
+        
+        recorrerLista(lista,crearTarjetaJuego,".Juegos-recomendados__contenedor")
+        recorrerLista(listaPacks,crearTarjetaPack,".juegos-recomendados__promo")
+        recorrerLista(listaComentarios,crearTarjetaComentario,".Reseñas-seccion__contenedor")
+        recorrerLista(juegosDelMomento,crearTarjetaJuegoMomento,".Juego-Destacado")
+
+        iniciarCarrito(lista,listaPacks,juegosDelMomento)
+    })
+}
+const API = 'https://6a3b0d87e4a07f202e148887.mockapi.io/juegos/juegos'
+
+traerApi(API)
 
 
 

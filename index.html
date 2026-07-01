@@ -136,14 +136,16 @@
             <h2 class="Formulario__h2">¿ Tenes dudas ? Contactame !!!</h2>
 
             <label class="Formulario__label">Nombre:</label>
-            <input class="Formulario__entrada" type="text" name="nombre" placeholder="Ingrese su nombre">
+            <input id="nombre" class="Formulario__entrada" type="text" name="nombre" placeholder="Ingrese su nombre" >
+            <small id="error-nombre" class="Formulario__error"></small>
 
             <label class="Formulario__label">Mail: </label>
-            <input class="Formulario__entrada" type="email" placeholder="Ingresa tu mail.." name="email">
+            <input id="mail" class="Formulario__entrada" type="email" placeholder="Ingresa tu mail.." name="email">
+            <small id="error-mail" class="Formulario__error"></small>
 
             <label class="Formulario__label">Mensaje:  </label>
-            <textarea class="Formulario__entrada Formulario__entrada--text" name="message"placeholder="Escribe aqui tu consulta"></textarea> <!--Para ingresar texto en multiples linea-->
-
+            <textarea id="mensaje" class="Formulario__entrada Formulario__entrada--text" name="message"placeholder="Escribe aqui tu consulta"></textarea> <!--Para ingresar texto en multiples linea-->
+            <small id="error-mensaje" class="Formulario__error"></small>
             <div class="Formulario__caja-botones">
                 <button class="Formulario__boton Formulario__boton--enviar"  type="submit">Enviar</button> 
                 <button class="Formulario__boton Formulario__boton--resetear" type="reset">Resetear</button>
@@ -202,6 +204,6 @@
     <!-- LLAMO AL MODULO PARA CREAR LAS CARDS DE FORMA DINAMICA -->
 
     <script type="module" src="./js/listarJuegos.js"> </script>
-
+    <script type="module" src="./js/validarForm.js"></script>
 </body>
 </html>
