@@ -1,26 +1,20 @@
-# 🎮 Play For Fun
-
-Proyecto web desarrollado como práctica de **HTML y CSS**, enfocado en una tienda/recomendador de videojuegos.
-
----
-
-## 📌 Descripción
-
-**Play For Fun** es una página web donde se muestran videojuegos recomendados, rankings, reseñas de usuarios y promociones especiales.  
-El objetivo principal del proyecto es aplicar conceptos básicos de **estructura HTML**, **selectores CSS** y **diseño visual**.
+**Play For Fun** es una página web desarrollada como proyecto práctico para el curso de **HTML, CSS y JavaScript**. Simula una tienda de videojuegos donde los usuarios pueden explorar juegos recomendados, visualizar packs exclusivos, consultar rankings, leer reseñas y realizar una compra mediante un carrito dinámico.
 
 ---
 
 ## 🚀 Funcionalidades
 
-- 🔹 Navegación con menú interactivo
-- 🔹 Sección de juegos recomendados
-- 🔹 Packs promocionales
-- 🔹 Ranking de juegos más jugados
-- 🔹 ⭐ Sección destacada: *Juego del momento*
-- 🔹 Reseñas de usuarios
-- 🔹 Formulario de contacto funcional (Formspree)
-- 🔹 Footer con información del sitio
+- Listado dinámico de juegos recomendados.
+- Packs exclusivos generados dinámicamente.
+- Reseñas de clientes cargadas dinámicamente.
+- Carrito de compras con agregado de productos.
+- Resumen de compra.
+- Persistencia de datos utilizando **Local Storage**.
+- Notificaciones interactivas mediante **SweetAlert2**.
+- Ranking de videojuegos.
+- Formulario de contacto.
+- Diseño responsive con animaciones
+- Uso de Api Rest **MockApi**
 
 ---
 
@@ -28,51 +22,88 @@ El objetivo principal del proyecto es aplicar conceptos básicos de **estructura
 
 - HTML5
 - CSS3
-- Animate.css (animaciones)
-- Font Awesome (íconos)
+- JavaScript (ES6)
+- Local Storage
+- SweetAlert2
+- Font Awesome
+- Animate.css
 - Google Fonts
-
----
-
-## 🎨 Diseño
-
-El diseño de la página utiliza una temática gamer con:
-- Colores predominantes: **negro y rojo**
-- Efectos de hover
-- Sombras y bordes iluminados
-- Animaciones de entrada
+- MockApi
+- CDN
 
 ---
 
 ## 📂 Estructura del proyecto
 
+```text
+Play-For-Fun/
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── carrito.js
+│   ├── listarJuegos.js
+│   ├── listas.js
+│   ├── modals.js
+│   └── validarForms.js
+│
+├── img/
+├── index.html
+└── README.md
 ```
-📁 proyecto
- ├── 📁 css
- │    └── style.css
- ├── 📁 img
- │    └── (imágenes de juegos)
- ├── 📁 video
- │    └── (trailer del juego destacado)
- ├── index.html
-```
-
-## 📈 Objetivo del proyecto
-
-Este proyecto fue realizado como parte del aprendizaje en desarrollo web, con el objetivo de:
-
-- Practicar HTML semántico
-- Aplicar estilos con CSS
-- Organizar contenido en secciones
-- Mejorar la presentación visual de una web
 
 ---
 
-## 🔮 Posibles mejoras futuras
+## 🛒 Carrito de compras
 
-- Agregar interactividad con JavaScript
-- Implementar carrito de compras
-- Mejorar el diseño responsive
+El carrito permite:
+
+- Agregar juegos y packs.
+- Eliminar juegos y packs
+- Visualizar los productos seleccionados.
+- Mostrar un resumen de la compra.
+- Mantener la información mediante **Local Storage**.
+- Mostrar alertas con **SweetAlert2**.
+
+---
+
+## 📦 Contenido dinámico
+
+Los siguientes elementos son generados dinámicamente con JavaScript:
+
+- Juegos recomendados.
+- Packs promocionales.
+- Comentarios de los usuarios.
+
+De esta forma es posible agregar nuevo contenido modificando únicamente los datos, sin editar el HTML.
+
+---
+
+## 📄 Secciones del sitio
+
+- Inicio
+- Juegos recomendados
+- Packs exclusivos
+- Ranking de videojuegos
+- Juego del momento
+- Reseñas
+- Carrito de compras
+- Formulario de contacto
+- Footer
+
+---
+
+## 🎯 Conceptos aplicados
+
+- HTML semántico.
+- Selectores y estilos con CSS.
+- Manipulación del DOM.
+- Modularización del código JavaScript.
+- Delegación de eventos.
+- Renderizado dinámico de contenido.
+- Persistencia de datos con Local Storage.
+- Uso de librerías externas.
 
 ---
 
