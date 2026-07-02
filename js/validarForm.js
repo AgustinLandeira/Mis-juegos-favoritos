@@ -86,6 +86,9 @@ function sacarError(inputError){
 
 
 function iniciarValidaciones(){
+
+    const btnResetear = document.querySelector(".Formulario__boton--resetear")
+
     /*Inicia con el proceso de validaciones, si esta todo ok, envia el formulario al servidor. De lo contrario, muestra los errores */
     const formulario = document.getElementById("contacto")
 
@@ -119,6 +122,12 @@ function iniciarValidaciones(){
         }
         
         formulario.submit()
+    })
+
+    btnResetear.addEventListener("click",function(){
+        sacarError(errorMensaje)
+        sacarError(errorNombre)
+        sacarError(errorMail)
     })
 
 }
