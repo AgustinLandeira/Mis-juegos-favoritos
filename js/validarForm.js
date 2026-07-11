@@ -1,65 +1,26 @@
-function validarInputVacio(inputForm,errorInput,mensaje){
+function validar(condicion,input,error, mensaje){
 
-    /*Valida que el input del fomulario pasado por parametro no este vacio
-    params:
-        inputForm:Es el input del fomulario
-        errorInput: EL error que se va a mostrar abajo de dicho input
-        mensaje: El mensaje de error de porque el input es invalido
-    return:
-        Devuelve un boolean, dice si hay error o no
-     */
+    /*Valida si los campos del formulario tienen errores de validacion.
+    PARAMS:
+        condicion: La validacion que tiene el campo del formulario.
+        input: El campo del formulario.
+        error: EL contenedor que va a mostrar el error abajo de dicho campo.
+        mensaje: El mensaje de error que se le mostrara al usuario.
+    RETURN:
+        Devuelve un boolean, dice si hubo un error o no.
 
-    let hayError = false
+    */
 
-    if(inputForm.value.trim() === ""){
-        hayError = true
-        mostrarError(errorInput,inputForm,mensaje)
-    }else{sacarError(errorInput)}
+    if(condicion){
 
-    return hayError
+        mostrarError(error,input,mensaje)
+        return true
+    }
+
+    sacarError(error,input)
+    return false
 }
 
-function validarMaximo(inputForm,errorInput,maximo,mensaje){
-
-    /*Valida que el input del fomulario no pase el maximo de caracteres
-    params:
-        inputForm: Es el input del fomulario
-        errorInput: EL error que se va a mostrar abajo de dicho input
-        mensaje: El mensaje de error de porque el input es invalido
-    return:
-        Devuelve un boolean, dice si hay error o no
-     */
-
-    let hayError = false
-
-    if(inputForm.value.length > maximo){
-        hayError = true
-        mostrarError(errorInput,inputForm,mensaje)
-    }else{sacarError(errorInput)}
-
-    return hayError
-}
-
-function validarMinimoCaracteres(inputForm,errorInput,minimo,mensaje){
-
-    /*Valida que el input del fomulario cumpla con el minimo de caracteres requeridos
-    params:
-        inputForm:Es el input del fomulario
-        errorInput: EL error que se va a mostrar abajo de dicho input
-        mensaje: El mensaje de error de porque el input es invalido
-    return:
-        Devuelve un boolean, dice si hay error o no
-     */
-
-    let hayError = false
-
-    if(inputForm.value.length < minimo){
-        hayError = true
-        mostrarError(errorInput,inputForm,mensaje)
-    }else{sacarError(errorInput)}
-
-    return hayError
-}
 
 function mostrarError(inputErrorFormulario,inputForm,mensaje){
 
@@ -74,14 +35,14 @@ function mostrarError(inputErrorFormulario,inputForm,mensaje){
     inputErrorFormulario.textContent = mensaje
     inputErrorFormulario.style.display = "block"
 
-    inputForm.classList.add(".Formulario__entrada--error")
+    inputForm.classList.add("Formulario__entrada--error")
 }
 
-function sacarError(inputError){
+function sacarError(inputError,inputForm){
 
     /*Saca el mensaje de error que esta abajo de dicho input */
     inputError.style.display = "none"
-    inputError.classList.remove(".Formulario__entrada--error")
+    inputForm.classList.remove("Formulario__entrada--error")
 }
 
 
@@ -109,13 +70,13 @@ function iniciarValidaciones(){
 
         event.preventDefault() //evito que el formulario se envie inmediatamente
 
-        if(validarInputVacio(nombre,errorNombre,"El nombre es requerido") || 
-            validarMinimoCaracteres(nombre,errorNombre,2,"El nombre tiene que contener 2 caracteres minimamente")||
-            validarInputVacio(mail,errorMail,"El mail es requerido") || 
-            validarMinimoCaracteres(mail,errorMail,10,"El mail tiene que contener 10 caracteres minimamente") || 
-            validarMaximo(nombre,errorNombre,20,"tiene que ser menos de 20 caracteres") || 
-            validarInputVacio(mensaje,errorMensaje,"El mensaje es requerido") ||
-            validarMaximo(mensaje,errorMensaje,100,"Tiene que tener menos de 40 caracteres")){
+        if(validar(nombre.value.trim() === "",nombre,errorNombre,"El nombre es requerido") ||
+            validar(nombre.value.length > 20,nombre,errorNombre,"tiene que ser menos de 20 caracteres") ||
+            validar(nombre.value.length < 2,nombre,errorNombre,"El nombre tiene que contener 2 caracteres minimamente")||
+            validar(mail.value.trim() === "",mail,errorMail,"El mail es requerido") || 
+            validar(mail.value.length < 10,mail,errorMail,"El mail tiene que contener 10 caracteres minimamente") ||  
+            validar(mensaje.value.trim() === "",mensaje,errorMensaje,"El mensaje es requerido") ||
+            validar(mensaje.value.length > 100,mensaje,errorMensaje,"Tiene que tener menos de 100 caracteres")){
             
             return ;
 
